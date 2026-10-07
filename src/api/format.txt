@@ -1,0 +1,20 @@
+score_grid[tern][classmate][textbook][day] → unit
+
+
+homework[code][textbook][day] → unit[type, name]
+
+db: scores[tern][textbook][classmate][unit] → value
+dir: scores/[class]/xlsx:[code]/tag:[textbook]/row:[classmate]/column:[unit] → value
+
+db: homeworks[code][textbook][day] → (unit)
+dir: homeworks/xlsx:[code]/row:[day]/column:[textbook] → unit name
+
+class, code > tern
+tern > classmate
+textbook
+
+homeworks[code][textbook] > [day, unit]
+scores[class][code][textbook][classmate][unit] > value
+
+daily
+xlsx:[tern]/tag:[day]/row:[classmate]/column:[textbook, unit] > score value
